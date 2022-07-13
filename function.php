@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$koneksi = mysqli_connect('localhost', 'root', '', 'inventory');
+$koneksi = mysqli_connect('localhost', 'root', '', 'sistem_inventory');
 
 if (isset($_POST['login'])) {
     //initial variable
@@ -38,7 +38,7 @@ if (isset($_POST['tambahpelanggan'])){
     $no_tlp = $_POST['no_tlp'];
     $alamat = $_POST['alamat'];
 
-    $insertpelanggan = mysqli_query($koneksi, "INSERT INTO pelanggan (nama_pelanggan, no_tlp, alamat) VALUES ('$nama_pelanggan', '$no_tlp', '$alamat')") ;
+    $insertpelanggan = mysqli_query($koneksi, "INSERT INTO pelanggan (nama_pelanggan, notelp, alamat) VALUES ('$nama_pelanggan', '$notelp', '$alamat')") ;
 
     if ($insertpelanggan) {
         //kalau sukses
