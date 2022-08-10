@@ -41,7 +41,7 @@ if (isset($_POST['tambahpelanggan'])) {
     $tambahpelanggan = mysqli_query(
         $koneksi,
         "INSERT INTO pelanggan (nama_pelanggan, no_tlp, alamat) 
-   VALUES ('$nama_pelanggan','$no_telp','$alamat')"
+   VALUES ('$nama_pelanggan','$no_tlp','$alamat')"
     );
 
     if ($tambahpelanggan) {
@@ -49,7 +49,7 @@ if (isset($_POST['tambahpelanggan'])) {
         header('location:pelanggan.php');
     } else {
         echo '<script>
-    alert("Gagal Tambag Pelanggan")
+    alert("Gagal Tambah Pelanggan")
     window.location.href="pelanggan.php"
     </script>';
     }
@@ -79,7 +79,7 @@ if (isset($_POST['editpelanggan'])) {
     $alamat = $_POST['alamat'];
     $id_pelanggan = $_POST['id_pelanggan'];
 
-    $edit_pelanggan = mysqli_query($koneksi, "UPDATE pelanggan SET nama_pelanggan='$nama_pelanggan', no_telp='$notelp', alamat='$alamat' WHERE id_pelanggan='$id_pelanggan'");
+    $edit_pelanggan = mysqli_query($koneksi, "UPDATE pelanggan SET nama_pelanggan='$nama_pelanggan', no_tlp='$no_tlp', alamat='$alamat' WHERE id_pelanggan='$id_pelanggan'");
 
     if ($edit_pelanggan) {
         header('location:pelanggan.php');
